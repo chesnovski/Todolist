@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import {Grid, Paper} from '@material-ui/core'
 
 
 const TODOForm = (props) => {
@@ -18,11 +19,22 @@ const TODOForm = (props) => {
     }
 
     return (
+        <Grid container direction="column" 
+        styles={{marginTop: '10rem'}}  >
+            <Paper>
         <form className="todo-form" onSubmit={handleSubmit}>
             <input type="text" placeholder="Add a todo" value={input}
                 name="text" className='todo-input' onChange={handleChange}  />
             <button className='todo-button'>Add todo</button>
         </form>
+            </Paper>
+        
+         
+
+
+
+        </Grid>
+        
     
     )
 }

@@ -6,10 +6,14 @@ import TODOList from './components/TODOList';
 const App = () => {
 
   return (
-    <div >
+    <div  style={{display: 'flex',  justifyContent:'center', height: '100h' }}>
       <TODOList/>
     </div>
   )
   }
   export default App;
+
+
+
+  
  
