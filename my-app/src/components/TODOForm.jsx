@@ -1,8 +1,19 @@
 import React, { useState } from 'react'
 import {Grid, Paper} from '@material-ui/core'
+import { makeStyles } from '@material-ui/core/styles';
 
 
 const TODOForm = (props) => {
+    const useStyles = makeStyles((theme) => ({
+        root: {
+          marginTop:'10px',
+          height: 80,
+          width: 500,
+        }
+       
+      }));
+      const classes = useStyles();
+    
     const [input, setInput] = useState('')
     const handleChange =e => {
         setInput(e.target.value)
@@ -21,7 +32,7 @@ const TODOForm = (props) => {
     return (
         <Grid container direction="column" 
         styles={{marginTop: '10rem'}}  >
-            <Paper>
+            <Paper className={classes.root} >
         <form className="todo-form" onSubmit={handleSubmit}>
             <input type="text" placeholder="Add a todo" value={input}
                 name="text" className='todo-input' onChange={handleChange}  />
